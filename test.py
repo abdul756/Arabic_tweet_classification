@@ -254,7 +254,7 @@ def main(args):
   predictions = []
   labels = []
   for item in tqdm(val_dataset):
-    _, prediction = model(
+    _, prediction = trained_model(
       item["input_ids"].unsqueeze(dim=0).to(device),
       item["attention_mask"].unsqueeze(dim=0).to(device)
     )
